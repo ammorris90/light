@@ -9,12 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+var lightOn = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        lightOn = !lightOn
+        updateUI()
+    }
+    func updateUI() {
+        if lightOn {
+        view.backgroundColor = .white
+    }
+    else {
+        view.backgroundColor = .black
+        }
+    }
 
 }
 
